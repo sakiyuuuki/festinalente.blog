@@ -97,7 +97,7 @@ header nav ul li a .global-nav-txt:hover {
 body{
     height: 115vh;
     width: 100%;
-    background-image: url("./_image/bg.jpg");
+    background-image: url("https://github.com/sakiyuuuki/festinalente.blog/blob/main/bg.jpg?raw=true");
     background-size: cover;
     background-position: center;
   }
