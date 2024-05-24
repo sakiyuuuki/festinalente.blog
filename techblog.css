@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center; */
     height: 100vh;
-    background-color: #5fb1a3;
+    background-color: #f0f4f4;
   }
   
   .navigation {
@@ -18,9 +18,9 @@
     height: 100vh;
     /* width: 300px; 最初はこれ*/
     width: 70px;
-    background-color: #4d4c86;
-    box-shadow: 10px 0 0 #c77946;
-    border-left: 10px solid #4d4c86;
+    background-color: #000000;
+    box-shadow: 10px 0 0 #9f1818;
+    border-left: 10px solid #000000;
     overflow-x: hidden;
     transition: all 0.5s;
   }
@@ -47,11 +47,11 @@
   }
   
   .navigation ul li:hover {
-    background-color: #20272c5e;
+    background-color: #430d0ddd;
   }
   
   .navigation ul li.active {
-    background-color: #c77946;
+    background-color: #9f1818;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
   }
@@ -75,7 +75,7 @@
     top: -30px;
     right: 0;
     border-radius: 50%;
-    box-shadow: 15px 15px 0 #c77946;
+    box-shadow: 15px 15px 0 #9f1818;
   }
   .navigation ul li.active a::after {
     content: "";
@@ -86,7 +86,7 @@
     top: 60px;
     right: 0;
     border-radius: 50%;
-    box-shadow: 15px -15px 0 #c77946;
+    box-shadow: 15px -15px 0 #9f1818;
   }
   
   .navigation ul li a .icon {
@@ -107,3 +107,18 @@
     line-height: 60px;
     white-space: nowrap;
   }
+
+article{
+    display: flex;
+    
+    
+}
+
+.main_contents{
+    background-color:rgb(169, 52, 107);
+    width:1100px;
+    height:1600px;
+    text-align: center;
+    margin-left: 10px;
+
+}
