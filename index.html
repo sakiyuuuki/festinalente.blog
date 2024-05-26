@@ -1,84 +1,115 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>あなたと一緒に学ぶ技術ラボ</title>
-    <link rel="stylesheet" href="stylesheets.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!--ヘッダー部分-->
-    <header class="header">
-      <nav class="global-nav">
-                <div>
-                    <a href="Home.html"><img src="https://github.com/sakiyuuuki/festinalente.blog/blob/main/festina_lente_vine_ex2.png?raw=true" alt="" class="logo"></a>
-                </div>
-                <!--ヘッダーのタブ一覧-->
-                 <ul class="global-nav-lists">
-                     <li>
-                       <a href="home2.html">
-                          <span class="global-nav-txt">ホーム</span>
-                          <span class="global-nav-subtxt">Home</span>
-                       </a>
-                     </li>
-                     <li>
-                        <a href="#">
-                             <span class="global-nav-txt">はじめに</span>
-                             <span class="global-nav-subtxt">Introduction</span>
-                        </a>
-                     </li>
-                     <li>
-                         <a href="techblog.html">
-                               <span class="global-nav-txt">技術ブログ</span>
-                               <span class="global-nav-subtxt">TechBlog</span>
-                          </a>
-                     </li>
-                     <li>
-                          <a href="#">
-                               <span class="global-nav-txt">その他の記事</span>
-                               <span class="global-nav-subtxt">Reference</span>
-                          </a>
-                     </li>
-                     <li>
-                           <a href="#">
-                                <span class="global-nav-txt">運営者について</span>
-                                <span class="global-nav-subtxt">About us</span>
-                           </a>
-                     </li>
-                     <li>
-                           <a href="#">
-                                 <span class="global-nav-txt">問い合わせ</span>
-                                 <span class="global-nav-subtxt">Contact</span>
-                           </a>
-                     </li>   
-                 </ul>
-                        <!--\ハンバーガーメニュー-->
-                        <div class="burger">
-                          <div class="line1"></div>
-                          <div class="line2"></div>
-                          <div class="line3"></div>
-                      </div>
-      </nav>
-                    
-                     
-    </header>
-    <!--メイン部分-->
-    <main>
-        <div class="title">
-            <h1>あなたと一緒に学ぶ技術ラボ</h1>
-            <p>~親愛なるあなたの隣人です~</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets.css">
+
+    <!--フォントスタイルの設定-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap');
+        </style>
+    <title>とあるカスタマーサクセスのブログ</title>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="#"><img src="./_image/festina_lente_300ppi.png" alt="" class="logo"></a>
+            <ul class="global-nav-lists">
+                <li>
+                    <a href="">
+                        <span class="global-nav-txt zen-old-mincho-regular ">ホーム</span>
+                        <span class="global-nav-subtxt zen-old-mincho-regular">Home</span>
+                    </a>
+                </li>
+                <li><a href=""><span class="global-nav-txt zen-old-mincho-regular ">はじめに</span><span class="global-nav-subtxt zen-old-mincho-regular">Introduction</span></a></li>
+                <li><a href=""><span class="global-nav-txt zen-old-mincho-regular ">アウトプット</span><span class="global-nav-subtxt zen-old-mincho-regular">Output</span></a></li>
+                <li><a href=""><span class="global-nav-txt zen-old-mincho-regular ">その他のブログ</span><span class="global-nav-subtxt zen-old-mincho-regular">Reference</span></a></li>
+                <li><a href=""><span class="global-nav-txt zen-old-mincho-regular ">運営者について</span><span class="global-nav-subtxt zen-old-mincho-regular">About us</span></a></li>
+                <li><a href=""><span class="global-nav-txt zen-old-mincho-regular ">お問い合わせ</span><span class="global-nav-subtxt zen-old-mincho-regular">Contact</span></a></li>
+            </ul>
+             <!--\ハンバーガーメニュー-->
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+       
+        <div class="LP-txt">
+            <h1 class="zen-old-mincho-regular">あなたと一緒に学ぶ技術ラボ</h1>
+            <p class="zen-old-mincho-regular">~親愛なるあなたの隣人です~</p>
         </div>
         <div class="button-area">
-            <a class="free" href="home2.html">もっと見る</a>
+            <a class="free" href="#" class="zen-old-mincho-regular">もっと見る</a>
         </div>
+    </header>
+    <main>
+        <!--Introductionセクション-->
+        <section class="Introduction">
+            <h2 class="title zen-old-mincho-regular h2-font-size">Introduction</h2>
+            <p class="Intro-txt zen-old-mincho-regular">当サイトはとある企業でカスタマーサクセスとして働く新卒社会人がデータ分析・統計学・AI・機械学習などの専門的な知識を習得するためにアウトプット用として作成したサイトになります。<br>基礎的なことはもちろんながら、実践的で役立つ知識を中心にブログを作成していきます。</p>
+        </section>
+         <!--Outputセクション-->
+        <section id="Output-id" class="Output-article">
+                <h2 class="title zen-old-mincho-regular h2-font-size">Output</h2>
+                <h3 class="Output-category zen-old-mincho-regular h3-font-size">＜Category＞</h3>
+                <div class="item-align-middle">
+                    <article>
+                        <img src="./_image/IMG_1996.jpg" alt="" class="Cateoriy">
+                    </article>
+                    <article>
+                        <img src="./_image/IMG_1996.jpg" alt="" class="Cateoriy">
+                    </article>
+                    <article>
+                        <img src="./_image/IMG_1996.jpg" alt="" class="Cateoriy">
+                    </article>
+                </div>
+                <div class="New-articles">
+                    <h3 class="zen-old-mincho-regular h3-font-size">＜New Article＞</h3>
+                    <div class="item-align-middle">
+                        <article>
+                            <img src="./_image/IMG_1996.jpg" alt="" class="New-article">
+                        </article>
+                        <article>
+                            <img src="./_image/IMG_1996.jpg" alt="" class="New-article">
+                        </article>
+                        <article>
+                            <img src="./_image/IMG_1996.jpg" alt="" class="New-article">
+                        </article>
+                    </div>
+                </div>
+         </section>
+            
+        </section>
+        <!--About usセクション-->
+        <Section id="About-us-id" class="About-us">
+            <div class="About-us-info">
+                <h2 class="title zen-old-mincho-regular h2-font-size">About us</h2>
+                <p class="zen-old-mincho-regular ">2000年生まれ。<br>2024年より都内のとある企業でカスタマーサクセスとして働いています。
+                   専門的な知識はほとんど無く、日々新しいことをたくさん学んでいます。色んなことに挑戦しながら、少しずつ自分の力をつけていきます。
+    
+                   少しでも私の学んだことが誰かの役に立てば幸いです。
+                </p>
+            </div>
+            <div class="About-us-img">
+                <img src="./_image/festina_lente_300ppi.png" alt="" class="logo2">
+            </div>
+        </Section>
     </main>
+
+    <footer>
+        <nav>
+         <ul>
+             <li><a href="#" class="zen-old-mincho-regular">プロフィール</a></li>
+             <li><a href="#" class="zen-old-mincho-regular">お問い合わせ</a></li>
+             <li><a href="#" class="zen-old-mincho-regular">サイトマップ</a></li>
+             <li><a href="#" class="zen-old-mincho-regular">プライバシーポリシー</a></li>
+             <li><a href="#" class="zen-old-mincho-regular">リンク集</a></li>
+             <p class="copyright zen-old-mincho-regular"><span lang="en"  class="zen-old-mincho-regular">©</span>2024.とあるカスタマーサクセスのブログ</p>
+         </ul>
+        </nav>        
+    </footer>
     <script src="LP.js"></script>
-  </body>
+</body>
 </html>
