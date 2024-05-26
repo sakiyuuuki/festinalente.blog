@@ -40,7 +40,7 @@ header{
     align-items:center; /*縦軸に中央揃え*/
     margin:0 auto;
     justify-content:space-between;
-    background-image:url("https://github.com/sakiyuuuki/festinalente.blog/blob/main/bg.jpg?raw=true");
+    background-image:url(https://github.com/sakiyuuuki/festinalente.blog/blob/main/bg.jpg?raw=true);
     background-size:cover;
     background-position:0 30px;
     position:relative;
