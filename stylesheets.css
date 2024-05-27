@@ -36,15 +36,15 @@ img:not(.logo){
   /* ----ヘッダーに関するオプション------------------------------------------------------------ */
 header{   
     width:100%;
-    height:100vh;
+    padding-top:66.66666%;
     align-items:center; /*縦軸に中央揃え*/
     margin:0 auto;
     justify-content:space-between;
     background-image:url(https://github.com/sakiyuuuki/festinalente.blog/blob/main/bg.jpg?raw=true);
     background-size:cover;
-    background-position:0 30px;
+    background-position:bottom;
     position:relative;
-    
+    background-repeat:no-repeat;
 }
 
 header::before {     /*画像を少し暗くする*/
@@ -203,140 +203,31 @@ header .button-area {
     transform:translateX(0%) !important;
 }
 
-/*1024pxを下回ったときに以下の処理をする*/
-@media screen and (max-width:1100px) {
-    .global-nav-txt{
-        font-size: 0.975rem;
+@keyframes navLinksFade {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
     }
-    .global-nav-subtxt{
-        font-size: 0.675rem;
-    }
-    header{
-        background-image:url(./_image/Thai.jpg);
-    }
-
-    header h1{
-       font-size: 3.56rem;
-       
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
     }
 }
 
-/*1024pxを下回ったときに以下の処理をする*/
-@media screen and (max-width:1024px) {
-    .navigation{
-        padding:0 40px 0 30px;
-    }
-    .Intro-txt{
-        font-size:1.2rem;
-        line-height:2.0rem;
-        letter-spacing:0.10em; 
-    }
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
-
-@media screen and (max-width:950px) {
-    .global-nav-lists{
-        position:absolute;
-        right: 0px;
-        left: 220px;
-        height:86vh;
-        top:14vh;
-        background-color:black;
-        flex-direction:column;
-        justify-content:center;
-        transform:translateX(100%)
-    }
-
-    .burger{
-        display: block;
-        padding-right:45px;
-        padding-top:35px;
-    }
-
-
-
-    header h1{
-        font-size: 3.06rem;
-        
-     }
-     header p{
-        font-size: 1.575rem;
-        top:50%;
-     }
-     .button-area a {
-        padding: 14px 26px;
-        top:58%;
-        
-    }
+.toggle .line2 {
+    opacity: 0;
 }
-
-@media screen and (max-width:850px) {
-
-    .Introduction,.Output-article,.About-us{
-        padding :0 30px; /*sectionタグを中央に配置*/
-
-    }
-    header h1{
-        font-size: 2.86rem;
-        
-     }
-     header p{
-        font-size: 1.475rem;
-        top:49%;
-     }
-     .button-area a {
-        padding: 13px 25px;
-        top:56%;
-        left: 41%;
-    }
-    
-    
-
-}
-
-@media screen and (max-width:800px) {
-    header h1{
-        font-size: 2.66rem;
-        
-     }
-     header p{
-        font-size: 1.405rem;
-        top:48.5%;
-     }
-     .button-area a {
-        padding: 12.5px 24.5px;
-        top:56%;
-        left: 41%;
-    }
-}
-
-@media screen and (max-width:400px) {
-    header h1{
-        font-size: 1.46rem;
-        
-     }
-     header p{
-        font-size: 1.005rem;
-        top:45.5%;
-        left:28%;
-     }
-     .button-area a {
-        padding: 12.5px 24.5px;
-        top:52%;
-        left: 35%;
-    }
-    
-    .Introduction h2{
-        font-size:1.8rem; 
-    }
-    .Introduction p{
-        font-size:0.8rem; 
-    }
+.toggle .line3 {
+    transform: rotate(405deg) translate(-5px, -6px);
 }
 
 
 /* ----メイン---------------------------------------------------------------- */
 main section{
-    padding :0 195px; /*sectionタグを中央に配置*/
+    padding :0 13%; /*sectionタグを中央に配置*/
     margin-top:100px; /*section同士の幅を指定*/
 }
 
@@ -352,7 +243,7 @@ main section{
     text-decoration:underline;
     text-underline-offset:8px;
     text-decoration-thickness:2px;
-    
+    width:20vw;
 }
 
 
@@ -381,18 +272,154 @@ main section{
     display: flex;
     justify-content: space-between;
 }
+
+.About-us-info {
+    width:35vw;
+}
+
 .About-us p{
-    width:49vh;
+    font-size:clamp(1.0rem,1.3vw,1.6rem);
 }
 
 .logo2{
-    width:28vh;
-    height:28vh;
-    border-radius: 50%;
+    margin-top:10px;
+    width:50vh;
+    height:30vh;
+}
+@media screen and (max-width:1024px){
+    .logo2{
+        width:48vh;
+        height:33vh; 
+        margin-top:23px;
+    }
+
+    header .logo{
+        height:10vh;
+        width:10vh;
+    }
+    .navigation{
+        padding:0 40px 0 30px;
+    }
+    .global-nav-txt {
+        font-size: 1.1375rem;
+        padding-top:6px;
+      }
+    header h1 {
+        top:39%;
+        left: 10%;
+    }
+       
+    header p {
+        top:53%;
+        left: 30%;
+    }
+    .button-area a {
+        top:63%;
+        left: 41%;
+    }
+}
+@media screen and (max-width:950px){
+    .global-nav-lists{
+        position:absolute;
+        right: 0px;
+        left: 550px;
+        height:89.5vh;
+        top:10.5vh;
+        background-color:black;
+        justify-content:flex-start;
+        align-items:center;
+        flex-direction:column; 
+        transform:translateX(100%)
+      }
+
+      .global-nav-lists li{
+        margin-top:45px;
+        margin-right: 540px;
+        margin-bottom:40px;
+        opacity:0;
+       
+      }
+    .burger{
+        display:block;
+    }
+    .navigation{
+        justify-content:space-between;
+    }
+
+    .global-nav-lists{
+        height:91.5vh;
+        top:8.5vh;
+    }
+
+    header .logo{
+        height:8vh;
+        width:8vh;
+    }
+
+    header h1 {
+        top:39%;
+        left: 17%;
+        font-size: 2.76rem;
+    }
+       
+    header p {
+        top:52%;
+        left: 27%;
+        font-size: 1.375rem;
+    }
+    .button-area a {
+        top:62%;
+        left: 40%;
+        padding: 15px 26px;
+        font-size:0.98rem;
+    }
+
+    .About-us{
+        flex-wrap:wrap;
+    }
+
+    .About-us p{
+        font-size:1.5rem;
+        width:200%;
+    }
+
+    .logo2{
+        width:190%;
+        height:100%;
+    }
 }
 
+@media only screen and (max-width:400px){
+    header h1 {
+        top:39%;
+        left: 8%;
+        font-size: 1.56rem;
+    }
+       
+    header p {
+        top:54%;
+        left: 22%;
+        font-size: 0.775rem;
+    }
+    .button-area a {
+        top:65%;
+        left: 39%;
+        padding: 8px 12px;
+        font-size:0.58rem;
+    }
+
+    .About-us h2{
+        width:120%;
+    }
+}
+
+
 /* ----footerタグ---------------------------------------------------------------- */
- footer ul{
+footer{
+    z-index:100;
+} 
+
+footer ul{
     list-style:none;
     text-align:center;
 }
@@ -421,3 +448,4 @@ footer nav{
     padding-left:20px;
     
 }
+
