@@ -7,11 +7,20 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 400;
+    font-style: normal;
+    color:black;
+}
+
 .zen-old-mincho-regular {
     font-family: "Zen Old Mincho", serif;
     font-weight: 400;
     font-style: normal;
 }
+
+
 
 /* ----共通するフォントサイズ------------------------------------------------------------ */
 
@@ -20,7 +29,7 @@ html{
 }
 
 .h2-font-size{
-    font-size:2.2rem;
+    font-size:2.3rem;
 }
 
 .h3-font-size{
@@ -33,39 +42,18 @@ img:not(.logo){
 }
 
 
-  /* ----ヘッダーに関するオプション------------------------------------------------------------ */
-header{   
-    width:100%;
-    padding-top:66.66666%;
-    align-items:center; /*縦軸に中央揃え*/
-    margin:0 auto;
-    justify-content:space-between;
-    background-image:url(https://github.com/sakiyuuuki/festinalente.blog/blob/main/bg.jpg?raw=true);
-    background-size:cover;
-    background-position:bottom;
-    position:relative;
-    background-repeat:no-repeat;
+/* ----ヘッダーに関するオプション------------------------------------------------------------ */
+header {
+    position:absolute; /*mainにbackground-imageをつけて画面上部から画像を出力したい場合はposition:absolute;を使用する*/
+    width:100%;/*ただ、absoluteを使うとheader幅は小さくなるのでwidth100％にする*/
+    z-index:3;
+    background-color:black;
 }
-
-header::before {     /*画像を少し暗くする*/
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.4);
-  }
-
-
 
 header .logo{
     height:15vh;
     width:15vh;
 }
-
-
-
 
 header a{
     text-decoration: none;
@@ -73,22 +61,24 @@ header a{
 }
 
 
-
-
-/* ----ヘッダーナビゲーション--------------------------------------------- */
-.navigation{
-    width: 100%; /*親要素に対して100%(この場合header*/
-    background-color: black;
-    display:flex;
-    align-items:center;
+header .header-container{
+    max-width:1800px;
+    margin:0 auto; /*ブロック要素を真ん中にする記法*/
     padding:0 80px 0 70px;
-    position: fixed;
-    top:0;
-    left: 0;
-    z-index:100;
 }
 
-/* -----------ulタグ----------------------------------- */
+.navigation{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+header ul li a:hover{
+    opacity: 0.5;
+}
+
+
+/* -----------header nav ul section------------------------------ */
 .global-nav-lists {
     display: flex;
     flex-wrap: nowrap; /*折り返されず一行で表示する*/
@@ -96,17 +86,14 @@ header a{
     width: 100%;
     transition:all 0.5s ease-in-out;
     list-style: none;
-  }
+}
 
-
-/* -----------　liタグ----------------------------------- */
+/* -----------header nav li section----------------------------------- */
 .global-nav-lists li{
     margin-right: 25px; /*liタグの間隔を指定*/
 }
 
-
-
-/* -----------　テキスト部分----------------------------------- */
+/* -----------header nav txt section----------------------------------- */
 
 .global-nav-txt {
     color:white;
@@ -126,38 +113,57 @@ header a{
     margin-top: 2px;
 }
 
-header ul li a:hover{
-    opacity: 0.5;
+/*------header btn section*/
+.navigation .btn span{
+    color:white;
+    font-size:17px;
+    line-height:39px;
+    display: none;
+}
+
+/*-----main  LP section----------------*/
+.LP{
+    background-image:url(./_image/bg.jpg); 
+    background-position:center bottom;/*背景画像の位置を設定する記法　複数を組み合わせることも可能。今回は真ん中の下側と設定*/
+    background-size: cover;            
+    height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.LP::before {     /*画像を少し暗くする*/
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
 }
 
 
-
-header h1 {
-       position:absolute;
-       top:40%;
-       left: 15%;
-       margin-bottom: 15px;
-       font-size: 4.06rem;
-       color: white;
-       
-    
+.LP-container{
+    color:white;
+    margin:0 auto;
+    max-width:1080px;
+    text-align:center;
+    position:relative;
+    z-index:2;
+    padding-top:60px;
 }
-      
-header p {
-      position:absolute;
-      top:53%;
-      left: 32%;
-      font-size: 1.875rem;
-      font-weight: 600;
-      color: white;
-     
+.LP-container h1{
+    font-size: 4.06rem;
+    margin-bottom: 15px;
+    font-weight:500;
 }
 
-header .button-area {
-    margin-top: 40px;
+.LP-container p {
+    font-size: 1.875rem;
+    font-weight: 500;
+    margin-bottom:40px;
 }
 
-.button-area a {
+.LP-container .button-area a{
     padding: 17px 30px;
     background: #da9168;
     border: none;
@@ -167,254 +173,202 @@ header .button-area {
     font-size: 1.0625rem;
     cursor: pointer;
     transition: all 0.3s;
-    text-decoration:none;
-    position:absolute;
-    top:63%;
-    left: 42%;
+    text-decoration:none;    
+    margin-right:30px;
+    transition-duration:.2s;
 }
 
-.button-area .free {
-    margin-right: 30px;
-}
-  
-.button-area button:hover {
-    color: #767685;
+.button-area a:hover {
+    background-color: #da9168;
+
 }
 
-/* ----ハンバーガーメニュー---------------------------------------------------------------- */
-
-.burger{
-    text-align:center;
-    padding:20px 0;
-    cursor:pointer;
-    display: none;
-    
-  }   
-
-.burger div{
-    width:25px;
-    height:3px;
-    background-color: white;
-    margin: 5px;
-    transition:0.5s ease;
+/*-----main  Introduction section----------------*/
+main section:not(.LP){
+    margin-top:100px;
 }
 
-.nav-active{
-    transform:translateX(0%) !important;
+main h2{
+    font-size:3.5rem;
+    margin-bottom:15px;
 }
 
-@keyframes navLinksFade {
-    0% {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-    }
+.Introduction-container{
+    max-width:980px;
+    width:90%;
+    margin:0 auto;
 }
 
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-.toggle .line2 {
-    opacity: 0;
-}
-.toggle .line3 {
-    transform: rotate(405deg) translate(-5px, -6px);
-}
-
-
-/* ----メイン---------------------------------------------------------------- */
-main section{
-    padding :0 13%; /*sectionタグを中央に配置*/
-    margin-top:100px; /*section同士の幅を指定*/
-}
-
-
-
-
-/* ----Output---------------------------------------------------------------- */
-.item-align-middle{
-    display:flex;
-}
-.title{
+/*.section-title{
     padding-bottom:12px;
-    text-decoration:underline;
+    text-decoration:underline  #2cb67d;
     text-underline-offset:8px;
-    text-decoration-thickness:2px;
+    text-decoration-thickness:3px;
     width:20vw;
-}
-
+}*/
 
 .Intro-txt{
     font-size:1.55rem;
-    line-height:2.4rem;
+    line-height:2.8rem;
     letter-spacing:0.14em;
 }
+.Introduction-container hr{
+    border:solid 2px #2cb67d;
+    margin-bottom:16px;
+    width:48px;
+}
 
-/* ----Category---------------------------------------------------------------- */
+/*-----main  OutPut section----------------*/
+.Output-article{
+    margin-bottom:45px;
+    background-color:rgb(241, 240, 240);
+    padding-top:15px;
+    padding-bottom:45px;
+}
+
+.Output-article .Output-container{
+    max-width:980px;
+    width:90%;
+    margin:0 auto;
+}
 
 .Output-category {
-    padding-bottom:30px;
-}
-
-.New-articles h3{
+    text-align: center;
     padding-top:15px;
-    padding-bottom:30px;
+    padding-bottom:20px;
+    font-weight:600;
+}
+
+.Output-article .row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.Output-article .col{
+    background-color:#ffffff;
+    width:32%;
+    padding:20px;
+    margin-bottom:30px;
 }
 
 
-/* ----About us---------------------------------------------------------------- */
+.Output-article .col h3{
+    font-size:1.55rem;
+    font-weight:600;
+    margin-bottom:16px;
+}
 
+.Output-article .col hr{
+    border:solid 2px #2cb67d;
+    margin-bottom:16px;
+    width:48px;
+}
+
+.Output-article .col .text{
+    font-size:1.05rem;
+    line-height:1.5;
+}
+
+.Output-article .Output-container .row .col .icon{
+    display:block;
+    min-width: 45px;
+    height: 60px;
+    align-items:center;
+    text-align: left;
+}
+.Output-article .Output-container .row .col .icon ion-icon {
+    font-size: 2.5em;
+}
+
+.Output-article .Output-container hr{
+    border:solid 2px #2cb67d;
+    margin-bottom:16px;
+    width:48px;
+}
+
+/*-----About us section----------------*/
 .About-us{
-    padding-bottom:100px;
-    display: flex;
-    justify-content: space-between;
+    margin-bottom:60px;
+
 }
 
-.About-us-info {
-    width:35vw;
+.About-us-container{
+    max-width:960px;
+    width:90%;
+    margin:0 auto;
 }
 
-.About-us p{
-    font-size:clamp(1.0rem,1.3vw,1.6rem);
+.About-us-container .row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-bottom:60px;
 }
 
-.logo2{
-    margin-top:10px;
-    width:50vh;
-    height:30vh;
+.About-us .col{
+    width:46%;
 }
-@media screen and (max-width:1024px){
-    .logo2{
-        width:48vh;
-        height:33vh; 
-        margin-top:23px;
-    }
-
-    header .logo{
-        height:10vh;
-        width:10vh;
-    }
-    .navigation{
-        padding:0 40px 0 30px;
-    }
-    .global-nav-txt {
-        font-size: 1.1375rem;
-        padding-top:6px;
-      }
-    header h1 {
-        top:39%;
-        left: 10%;
-    }
-       
-    header p {
-        top:53%;
-        left: 30%;
-    }
-    .button-area a {
-        top:63%;
-        left: 41%;
-    }
-}
-@media screen and (max-width:950px){
-    .global-nav-lists{
-        position:absolute;
-        right: 0px;
-        left: 550px;
-        height:89.5vh;
-        top:10.5vh;
-        background-color:black;
-        justify-content:flex-start;
-        align-items:center;
-        flex-direction:column; 
-        transform:translateX(100%)
-      }
-
-      .global-nav-lists li{
-        margin-top:45px;
-        margin-right: 540px;
-        margin-bottom:40px;
-        opacity:0;
-       
-      }
-    .burger{
-        display:block;
-    }
-    .navigation{
-        justify-content:space-between;
-    }
-
-    .global-nav-lists{
-        height:91.5vh;
-        top:8.5vh;
-    }
-
-    header .logo{
-        height:8vh;
-        width:8vh;
-    }
-
-    header h1 {
-        top:39%;
-        left: 17%;
-        font-size: 2.76rem;
-    }
-       
-    header p {
-        top:52%;
-        left: 27%;
-        font-size: 1.375rem;
-    }
-    .button-area a {
-        top:62%;
-        left: 40%;
-        padding: 15px 26px;
-        font-size:0.98rem;
-    }
-
-    .About-us{
-        flex-wrap:wrap;
-    }
-
-    .About-us p{
-        font-size:1.5rem;
-        width:200%;
-    }
-
-    .logo2{
-        width:190%;
-        height:100%;
-    }
+.About-us .col h2{
+    padding-bottom:15px;
 }
 
-@media only screen and (max-width:400px){
-    header h1 {
-        top:39%;
-        left: 8%;
-        font-size: 1.56rem;
-    }
-       
-    header p {
-        top:54%;
-        left: 22%;
-        font-size: 0.775rem;
-    }
-    .button-area a {
-        top:65%;
-        left: 39%;
-        padding: 8px 12px;
-        font-size:0.58rem;
-    }
-
-    .About-us h2{
-        width:120%;
-    }
+.About-us-txt{
+    font-size:1.05rem;
+    line-height:1.8rem;
 }
 
+.About-us .col hr{
+    border:solid 2px #2cb67d;
+    margin-bottom:16px;
+    width:48px;
+}
+/* ----News section-----------*/
+.News {
+    padding-top:60px;
+    margin-bottom:60px;
+}
 
-/* ----footerタグ---------------------------------------------------------------- */
+.News .News-container{
+    max-width:960px;
+    width:90%;
+    margin:0 auto;
+}
+
+.News h2{
+    font-size:28px;
+    font-weight:500;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.News hr{
+    border:solid 2px #2cb67d;
+    margin:0 auto 40px;
+    width:60px;
+}
+
+.News ul{
+    max-width:700px;
+    margin:0 auto;
+
+}
+
+.News li{
+    border:solid 1px black;
+    margin-bottom:20px;
+    padding:16px 24px;
+    list-style:none;
+}
+
+.News .date{
+    font-weight:500;
+    letter-spacing:1px;
+    margin-bottom:6px;
+}
+
+/* ----footer section---------------------------------------------------------------- */
 footer{
     z-index:100;
 } 
@@ -448,4 +402,97 @@ footer nav{
     padding-left:20px;
     
 }
+/* ----mediaquery---------------------------------------------------------------- */
 
+@media screen and (max-width:767px){
+    header .header-container{
+        padding:0 20px 0 10px;
+    }
+
+    header .logo{
+        height:8vh;
+        width:8vh;
+    }
+
+    .global-nav-lists li{
+        margin-right: 15px; /*liタグの間隔を指定*/
+    }
+    
+    /* -----------header nav txt section----------------------------------- */
+    
+    .global-nav-txt {
+        font-size: 0.6375rem;
+        font-weight: 700;
+      }
+    
+    .global-nav-subtxt {
+        color:white;
+        font-size: 0.525rem;
+       
+    }
+    
+    .LP-container h1{
+        font-size: 1.56rem;
+    }
+    .LP-container p{
+        font-size: 1.075rem;
+    }
+    .Introduction-container h2{
+        font-size:2.0rem;
+    }
+    .Intro-txt{
+        font-size:1.10rem;
+        line-height:1.8rem;
+        letter-spacing:0.10em;
+    }
+
+    .Output-article .col{
+        width:100%;
+        margin-bottom:20px;
+    }
+    .About-us .col{
+        width:100%;
+        margin-bottom:30px;
+    }
+}
+@media screen and (max-width:575px){
+    .global-nav-lists li{
+        margin-right: 10px; /*liタグの間隔を指定*/
+    }
+    
+    /* -----------header nav txt section----------------------------------- */
+    
+    .global-nav-txt {
+        font-size: 0.5375rem;
+        font-weight: 700;
+      }
+    
+    .global-nav-subtxt {
+        color:white;
+        font-size: 0.325rem;
+       
+    }
+}
+
+@media screen and (max-width:484px){
+    .global-nav-lists li{
+        margin-right: 6px; /*liタグの間隔を指定*/
+    }
+    
+    /* -----------header nav txt section----------------------------------- */
+    
+    .global-nav-txt {
+        font-size: 0.48rem;
+        font-weight: 700;
+      }
+    
+    .global-nav-subtxt {
+        color:white;
+        font-size: 0.225rem;
+       
+    }
+    header .logo{
+        height:7vh;
+        width:7vh;
+    }
+}
