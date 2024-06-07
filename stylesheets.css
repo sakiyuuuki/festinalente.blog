@@ -454,6 +454,12 @@ footer nav{
         width:100%;
         margin-bottom:30px;
     }
+    .LP-container .button-area a{
+        padding: 10px 22px;
+        font-size: 0.9625rem;
+        margin-right:10px;
+        
+    }
 }
 @media screen and (max-width:575px){
     .global-nav-lists li{
