@@ -124,7 +124,7 @@ header ul li a:hover{
 /*-----main  LP section----------------*/
 .LP{
     background-image:url("https://github.com/sakiyuuuki/festinalente.blog/blob/main/bg.jpg?raw=true"); 
-    background-position:center bottom;/*背景画像の位置を設定する記法　複数を組み合わせることも可能。今回は真ん中の下側と設定*/
+    background-position:center ;/*背景画像の位置を設定する記法　複数を組み合わせることも可能。今回は真ん中の下側と設定*/
     background-size: cover;            
     height:100vh;
     display:flex;
